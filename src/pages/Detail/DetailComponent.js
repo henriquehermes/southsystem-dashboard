@@ -1,14 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import * as Styles from './DetailStyles';
 import backIcon from '../../assets/back.png';
 
-export default function Detail({ detail, handleBack }) {
+export default function DetailComponent({ detail, handleBack }) {
   return (
     <Styles.Container>
       <Styles.Header>
         <Styles.Button onClick={() => handleBack()}>
-          <img src={backIcon} />
+          <img src={backIcon} alt='backimage' />
         </Styles.Button>
         <Styles.Title>{detail.title}</Styles.Title>
       </Styles.Header>
@@ -43,3 +44,8 @@ export default function Detail({ detail, handleBack }) {
     </Styles.Container>
   );
 }
+
+DetailComponent.propTypes = {
+  handleBack: PropTypes.func.isRequired,
+  detail: PropTypes.shape.isRequired,
+};

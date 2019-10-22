@@ -1,24 +1,22 @@
 import React from 'react';
 import AnimateHeight from 'react-animate-height';
+import PropTypes from 'prop-types';
 
 import * as Styles from './DashboardStyles';
 import Button from '../../components/Button/ButtonComponent';
 import Detail from '../Detail/DetailComponent';
 
-export default function Dashboard({ films, detail, showDetails }) {
+export default function DashboardComponent({ films, detail, showDetails }) {
   return (
     <Styles.Container>
       <Styles.Content>
         <Styles.Title>Lista de filmes</Styles.Title>
-        <AnimateHeight
-          duration={500}
-          height={films.length === 0 ? '0' : 'auto'}
-        >
+        <AnimateHeight duration={500} height={films.length === 0 ? 0 : 'auto'}>
           <Styles.Grid>
             {!detail &&
               films.length > 0 &&
-              films.map((item, index) => (
-                <Button key={index} onClick={() => showDetails(item)}>
+              films.map(item => (
+                <Button key={item.episode_id} onClick={() => showDetails(item)}>
                   <Styles.FilmLetter>{item.title}</Styles.FilmLetter>
                 </Button>
               ))}
@@ -31,3 +29,9 @@ export default function Dashboard({ films, detail, showDetails }) {
     </Styles.Container>
   );
 }
+
+DashboardComponent.propTypes = {
+  showDetails: PropTypes.func.isRequired,
+  films: PropTypes.shape.isRequired,
+  detail: PropTypes.shape.isRequired,
+};

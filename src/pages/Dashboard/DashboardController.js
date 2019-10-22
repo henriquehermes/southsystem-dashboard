@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import DashboardComponent from './DashboardComponent';
 
-import { getFilms } from '../../services/DashboardService';
+import getFilms from '../../services/DashboardService';
 
 export default function Dashboard() {
   const [films, setFilms] = useState([]);
@@ -11,7 +11,7 @@ export default function Dashboard() {
   useEffect(() => {
     async function getData() {
       const data = await getFilms();
-      setFilms(data.results);
+      setFilms(data);
     }
     getData();
   }, []);
