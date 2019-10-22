@@ -1,12 +1,6 @@
-# SoftDesign
+# South System
 
-Para rodar o servidor:
-
-```
-npm run mock:api
-```
-
-Após isto:
+Para rodar o projeto:
 
 ```
 npm start
