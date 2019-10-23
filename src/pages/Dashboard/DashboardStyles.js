@@ -1,14 +1,26 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 const defaultFont = css`
   color: #282a36;
   font-weight: bold;
 `;
 
+const defaultAnimation = keyframes`
+from {
+  opacity: 0;
+}
+
+to{
+  opacity: 1;
+}
+`;
+
 export const Container = styled.div`
   display: flex;
   justify-content: center;
   padding: 40px;
+  animation: ${defaultAnimation} 0.5s backwards;
+  animation-delay: 0.2s;
 
   @media (max-width: 425px) {
     padding: 15px;
