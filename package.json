@@ -7,7 +7,12 @@
     "start": "webpack-dev-server --open --hot --mode development",
     "build": "webpack --mode production",
     "mock:api": "json-server --watch src/config/db.json --port 4000",
-    "test": "jest"
+    "test": "jest --silent"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js"
+    }
   },
   "keywords": [],
   "author": "",
@@ -51,7 +56,7 @@
     "react-dom": "^16.8.5",
     "react-responsive-modal": "^4.0.1",
     "react-router-dom": "^5.1.2",
-    "react-test-renderer": "^16.10.2",
+    "react-test-renderer": "^16.11.0",
     "styled-components": "^4.4.0",
     "svg-inline-loader": "^0.8.0",
     "svg-url-loader": "^3.0.2"

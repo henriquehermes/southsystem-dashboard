@@ -10,8 +10,8 @@ export const Container = styled.div`
   justify-content: center;
   padding: 40px;
 
-  @media (max-width: 767px) {
-    padding: 5px;
+  @media (max-width: 425px) {
+    padding: 15px;
   }
 `;
 
@@ -38,4 +38,8 @@ export const Grid = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 428px) {
+    justify-content: center;
+  }
 `;
